@@ -69,7 +69,6 @@ icon.innerText = iconCount;
   }
 
   else if (e.target.classList.contains("decrease")) {
-
     qty--;
 
   
@@ -95,5 +94,13 @@ if (qty <= 0) {
     qty++;
     qtySpan.innerText = qty;
   }
+  if (count === 0) {
+  cartItems.innerHTML = `
+    <div class="empty-state absolute inset-0 flex flex-col justify-center items-center">
+      <h2 class="mt-4 text-xl font-semibold">Your cart is empty</h2>
+      <p class="text-gray-500">Add items to get started.</p>
+    </div>
+  `;
+}
 
 });
