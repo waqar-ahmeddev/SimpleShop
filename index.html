@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind Test</title>
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
    <div>
@@ -127,21 +126,23 @@
             </div>
                    <!-- RIGHT SIDE CART -->
     <div class="w-[30%] p-4 border-l">
-        <h1 class="text-2xl font-bold mb-4">Your Cart (0)</h1>
-        <div class="border-2 border-dashed border-red-400 rounded-xl h-[400px] flex flex-col justify-center items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"
-            fill="none" stroke="gray" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="8" cy="21" r="1"/>
-                <circle cx="19" cy="21" r="1"/>
-                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
-            </svg>
-            <h2 class="mt-4 text-xl font-semibold">Your cart is empty</h2>
-            <p class="text-gray-500">Add items to get started.</p>
-        </div>
+        <h1 class="cart-count text-2xl font-bold mb-4">Your Cart (0)</h1>
+        <div class="cart-items border-2 border-dashed border-red-400 rounded-xl h-[400px] flex flex-col justify-center items-center">
+    <div class="empty-state flex flex-col justify-center items-center">     
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"
+        fill="none" stroke="gray" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="21" r="1"/>
+            <circle cx="19" cy="21" r="1"/>
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+        </svg>
+        <h2 class="mt-4 text-xl font-semibold">Your cart is empty</h2>
+        <p class="text-gray-500">Add items to get started.</p>
+    </div>
+</div>
         <div class="mt-6 flex justify-between text-2xl font-bold">
             <span>Total:</span>
-            <span class="text-green-600">$0</span>
+            <span class="cart-total text-green-600">$0</span>
         </div>
         <button class="w-full mt-4 bg-gray-300 py-3 rounded-xl text-white font-bold">
             Proceed to Checkout
@@ -152,6 +153,7 @@
          </div>
       </div>
    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
    <script src="script.js"></script>
 </body>
 </html>
