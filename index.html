@@ -9,8 +9,6 @@
 <body class="bg-gray-100">
    <div>
       <div>
-       
-
          <div class="bg-blue-50 w-full h-[900px] mx-1 my-1 rounded-2xl shadow-lg overflow-hidden">
             
             <div class="bg-blue-100 flex items-center px-4 py-2">
@@ -34,7 +32,8 @@
                   <span class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] rounded-full px-1">0</span>
                </div>
             </div>  
-            <div class="bg-blue-50 w-[800px] h-[700px] border-t mt-2">
+            <div class="flex border-t mt-2">
+            <div class=" bg-blue-50 w-[800px] h-[700px] border-t mt-2">
               <h1 class="pl-2 pt-2 text-lg font-bold">Our Products</h1>
               <div class="flex gap-3">
               <div class="bg-blue-200 w-52 h-64 rounded-2xl ml-1.5 mt-3 flex flex-col p-3 shadow-md">  
@@ -79,6 +78,7 @@
            <span class="text-xs font-bold text-white">Add To Cart</span>
           </button>
             </div>
+            
               </div>
               <div class="flex gap-3">
               <div class="bg-blue-200 w-52 h-64 rounded-2xl ml-1.5 mt-3 flex flex-col p-3 shadow-md">  
@@ -124,7 +124,31 @@
           </button>
             </div>
             </div>
-            </div>  
+            </div>
+                   <!-- RIGHT SIDE CART -->
+    <div class="w-[30%] p-4 border-l">
+        <h1 class="text-2xl font-bold mb-4">Your Cart (0)</h1>
+        <div class="border-2 border-dashed border-red-400 rounded-xl h-[400px] flex flex-col justify-center items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"
+            fill="none" stroke="gray" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="8" cy="21" r="1"/>
+                <circle cx="19" cy="21" r="1"/>
+                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+            </svg>
+            <h2 class="mt-4 text-xl font-semibold">Your cart is empty</h2>
+            <p class="text-gray-500">Add items to get started.</p>
+        </div>
+        <div class="mt-6 flex justify-between text-2xl font-bold">
+            <span>Total:</span>
+            <span class="text-green-600">$0</span>
+        </div>
+        <button class="w-full mt-4 bg-gray-300 py-3 rounded-xl text-white font-bold">
+            Proceed to Checkout
+        </button>
+    </div>
+</div>
+            </div>
          </div>
       </div>
    </div>
