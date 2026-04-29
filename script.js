@@ -75,6 +75,7 @@ if (count === 0) {
 }
 
 iconCount--;
+
 if (iconCount < 0) iconCount = 0;
 
 icon.innerText = iconCount;
@@ -85,8 +86,7 @@ icon.innerText = iconCount;
 
   
 if (qty <= 0) {
-  item.remove();
-
+  item.remove();   
   count--;
   if (count < 0) count = 0;
 
