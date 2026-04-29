@@ -2,7 +2,7 @@ let btn = document.querySelectorAll("button");
 let cartItems = document.querySelector(".cart-items");
 let cartCount = document.querySelector(".cart-count");
 let cartTotal = document.querySelector(".cart-total");
-let finaLized = document.querySelector(".finalized");
+let  checkoutBtn = document.querySelector(".checkout-btn");
 let icon = document.querySelector(".icons");
 let count = 0;
 let total = 0;
@@ -21,7 +21,14 @@ btn.forEach((button) => {
         price = parseFloat(price.replace(/[^0-9.]/g, ""));
         let img = card.querySelector("img").src;
         count++;
-       cartCount.innerHTML = `Your Cart (${count})`;
+         checkoutBtn.disabled = false;
+         checkoutBtn.style.backgroundColor = "#2563eb"; // Blue color
+         checkoutBtn.style.opacity = "1";
+         checkoutBtn.style.cursor = "pointer";
+         checkoutBtn.style.color = "white";
+         cartCount.innerHTML = `Your Cart (${count})`; 
+        total += price; // Naye item ki price total mein add ho gayi
+        cartTotal.innerText = `$${total.toFixed(2)}`;
         cartItems.innerHTML += `  
  <div class="item flex items-center justify-between w-80 max-w-sm p-3 border rounded-xl shadow-sm mb-2 bg-white">
     <div class="controls items-center gap-3">
@@ -32,7 +39,6 @@ btn.forEach((button) => {
         <p>$${price}</p>
       </div>
     </div>
-
     <div class="flex items-center gap-2">
       <button class="decrease">-</button>
       <span class="qty">1</span>
@@ -59,8 +65,14 @@ cartItems.addEventListener("click", (e) => {
     item.remove();
     count--;
 if (count < 0) count = 0;
-
 cartCount.innerHTML = `Your Cart (${count})`;
+if (count === 0) {
+    let checkoutBtn = document.querySelector(".checkout-btn");
+    checkoutBtn.disabled = true;
+    checkoutBtn.style.backgroundColor = "#d1d5db"; // Grey color
+    checkoutBtn.style.opacity = "0.5";
+    checkoutBtn.style.cursor = "not-allowed";
+}
 
 iconCount--;
 if (iconCount < 0) iconCount = 0;
