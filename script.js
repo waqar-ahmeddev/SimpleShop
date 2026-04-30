@@ -149,6 +149,10 @@ checkoutBtn.addEventListener("click", () => {
     }
     
 });
+function closeModal() {
+   document.querySelector(".overlay").classList.add("hidden");
+    document.querySelector(".org").classList.remove("blur-sm");
+}
 
 
 

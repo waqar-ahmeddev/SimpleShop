@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="Tailwind.png">
     <title>Tailwind Test</title>
 </head>
-<body class="bg-gray-100 overflow-hidden">
+<body class="bg-gray-100 overflow-x-hidden overflow-y-auto">
    <div class="org">
       <div>
          <div class="bg-blue-50 w-full h-[900px] mx-1 my-1 rounded-2xl shadow-lg overflow-hidden">
@@ -194,6 +194,9 @@
             <p class="text-slate-500 font-medium text-sm">
                (<span id="overlay-item-count">0</span> items)
             </p>
+            <div class="ml-auto">
+            <button onclick="closeModal()" class="crossbutton bg-green-200 rounded-3xl w-20 h-8 text-lg font-bold font-serif">X</button>
+            </div>
          </div>
       </div>
 
