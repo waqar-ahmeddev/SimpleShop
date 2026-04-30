@@ -7,7 +7,7 @@
     <title>Tailwind Test</title>
 </head>
 <body class="bg-gray-100 overflow-hidden">
-   <div>
+   <div class="org">
       <div>
          <div class="bg-blue-50 w-full h-[900px] mx-1 my-1 rounded-2xl shadow-lg overflow-hidden">
             
@@ -179,6 +179,22 @@
          </div>
       </div>
    </div>
+</div> 
+<!-- Sahi Overlay Div (Isko 'org' div ke BAHR rakhein) -->
+<!-- Main Overlay -->
+<div class="overlay hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/20 backdrop-blur-sm">
+   
+   <!-- Modal Box: 'items-center' yahan se hata diya taaki content shuru se start ho -->
+   <div class="bg-white w-[500px] h-[650px] rounded-3xl flex flex-col shadow-2xl border border-slate-100 overflow-hidden">
+      
+      <!-- Header Section: Added 'w-full' and 'text-left' -->
+      <div class="w-full p-8 pb-4">
+         <div class="flex items-baseline gap-2 justify-start">
+            <h1 class="text-2xl font-bold text-slate-800">Your Order</h1>
+          </div>
+      </div>
+   </div>
+</div>
     <script src="https://cdn.tailwindcss.com"></script>
    <script src="script.js"></script>
 </body>

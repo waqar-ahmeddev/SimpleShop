@@ -2,7 +2,9 @@ let btn = document.querySelectorAll("button");
 let cartItems = document.querySelector(".cart-items");
 let cartCount = document.querySelector(".cart-count"); // yeh jo card k uper wala ha 
 let cartTotal = document.querySelector(".cart-total");
-let  checkoutBtn = document.querySelector(".checkout-btn");
+let  checkoutBtn = document.querySelector(".checkout-btn");// for button proceed to checkout
+let b = document.querySelector(".org"); // yeh main div ha 
+let over = document.querySelector(".overlay");
 let icon = document.querySelector(".icons");
 let count = 0; // yeh card k uper wala count ha 
 let total = 0;
@@ -30,7 +32,7 @@ btn.forEach((button) => {
         total += price; // Naye item ki price total mein add ho gayi
         cartTotal.innerText = `$${total.toFixed(2)}`;
         cartItems.innerHTML += `  
- <div class="item flex items-center justify-between w-80 max-w-sm p-3 border rounded-xl shadow-sm mb-2 bg-white" data-price="${price}">
+ <div class="item flex items-center justify-between w-full max-w-lg p-3 border rounded-xl shadow-sm mb-2 bg-white" data-price="${price}">
     <div class="controls items-center gap-3">
       <img src="${img}" class="w-14 h-14 object-contain rounded-md border">
 
@@ -94,12 +96,10 @@ icon.innerText = iconCount;
   total -= itemPrice;
 
   if (qty <= 0) {
-
-    item.remove();
-
+   item.remove();
     count--;
     if (count < 0) count = 0;
-
+   
     iconCount--;
     if (iconCount < 0) iconCount = 0;
 
@@ -123,5 +123,20 @@ else if (e.target.classList.contains("increase")) {
 
   cartTotal.innerText = `$${total.toFixed(2)}`;
 }
+  if (count === 0) {
+    let checkoutBtn = document.querySelector(".checkout-btn");
+    checkoutBtn.disabled = true;
+    checkoutBtn.style.backgroundColor = "#d1d5db"; // Grey color
+    checkoutBtn.style.opacity = "0.5";
+    checkoutBtn.style.cursor = "not-allowed";
+}
 });
+checkoutBtn.addEventListener("click", () => {
+   document.querySelector(".org").classList.add("blur-sm");
+   document.querySelector(".overlay").classList.remove("hidden");
+   
+});
+
+
+
 
