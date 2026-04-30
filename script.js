@@ -3,6 +3,7 @@ let cartItems = document.querySelector(".cart-items");
 let cartCount = document.querySelector(".cart-count"); // yeh jo card k uper wala ha 
 let cartTotal = document.querySelector(".cart-total");
 let  checkoutBtn = document.querySelector(".checkout-btn");// for button proceed to checkout
+let closebtn = document.querySelector(".close-btn");
 let b = document.querySelector(".org"); // yeh main div ha 
 let over = document.querySelector(".overlay");
 let icon = document.querySelector(".icons");
@@ -147,12 +148,40 @@ checkoutBtn.addEventListener("click", () => {
     } else {
         prompt("0rder is empty");
     }
-    
 });
 function closeModal() {
    document.querySelector(".overlay").classList.add("hidden");
     document.querySelector(".org").classList.remove("blur-sm");
 }
+closebtn.addEventListener("click", () => {
+
+   // overlay hide
+   over.classList.add("hidden");
+
+   // blur remove
+   b.classList.remove("blur-sm");
+
+   // cart items remove
+   cartItems.innerHTML = "";
+
+   // values reset
+   count = 0;
+   total = 0;
+   iconCount = 0;
+
+   // update UI
+   cartCount.innerHTML = `Your Cart (0)`;
+   cartTotal.innerText = `$0.00`;
+   icon.innerText = "0";
+
+   // disable button
+   checkoutBtn.disabled = true;
+   checkoutBtn.style.backgroundColor = "#d1d5db";
+   checkoutBtn.style.opacity = "0.5";
+   checkoutBtn.style.cursor = "not-allowed";
+
+});
+
 
 
 
