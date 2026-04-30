@@ -134,7 +134,20 @@ else if (e.target.classList.contains("increase")) {
 checkoutBtn.addEventListener("click", () => {
    document.querySelector(".org").classList.add("blur-sm");
    document.querySelector(".overlay").classList.remove("hidden");
-   
+   const overlayList = document.querySelector(".overlay-list");
+
+    // 3. Cart se sara HTML copy karke Overlay mein daal dein
+    if (cartItems.children.length > 0) {
+        overlayList.innerHTML = cartItems.innerHTML; 
+        document.getElementById("overlay-item-count").innerText = count;
+        document.getElementById("totalamount").innerText = `$${total.toFixed(2)}`;
+        // Blur apply karein aur Overlay dikhayein
+        mainDiv.classList.add("blur-sm");
+        overlay.classList.remove("hidden");
+    } else {
+        prompt("0rder is empty");
+    }
+    
 });
 
 

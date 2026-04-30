@@ -184,15 +184,36 @@
 <!-- Main Overlay -->
 <div class="overlay hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/20 backdrop-blur-sm">
    
-   <!-- Modal Box: 'items-center' yahan se hata diya taaki content shuru se start ho -->
+   <!-- Modal Box -->
    <div class="bg-white w-[500px] h-[650px] rounded-3xl flex flex-col shadow-2xl border border-slate-100 overflow-hidden">
       
-      <!-- Header Section: Added 'w-full' and 'text-left' -->
+      <!-- Header Section -->
       <div class="w-full p-8 pb-4">
          <div class="flex items-baseline gap-2 justify-start">
             <h1 class="text-2xl font-bold text-slate-800">Your Order</h1>
-          </div>
+            <p class="text-slate-500 font-medium text-sm">
+               (<span id="overlay-item-count">0</span> items)
+            </p>
+         </div>
       </div>
+
+      <!-- Items List Area -->
+      <div class="overlay-list p-8 flex-1 overflow-y-auto">
+         <!-- Cart items yahan copy hokar ayenge -->
+      </div>
+
+      <!-- Subtotal Section (Fixed Alignment) -->
+      <div class="p-8 border-t border-slate-100">
+         <div class="flex justify-between items-center mb-6">
+            <p class="text-lg text-slate-600 font-medium">Subtotal</p>
+            <span id="totalamount" class="text-2xl font-bold text-slate-900">$0.00</span>
+         </div>
+         
+         <button class="close-btn w-full bg-slate-800 text-white py-4 rounded-2xl font-bold hover:bg-slate-900 transition-all">
+            Confirm Order
+         </button>
+      </div>
+
    </div>
 </div>
     <script src="https://cdn.tailwindcss.com"></script>
